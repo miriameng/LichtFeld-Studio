@@ -276,6 +276,10 @@ target_compile_definitions(lichtfeld_tests PRIVATE
     PROJECT_ROOT_PATH="${CMAKE_SOURCE_DIR}"
 )
 
+if(WIN32)
+    target_compile_definitions(lichtfeld_tests PRIVATE NOMINMAX)
+endif()
+
 # Link libraries
 target_link_libraries(lichtfeld_tests PRIVATE
     # LFS modules
